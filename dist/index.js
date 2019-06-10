@@ -164,38 +164,18 @@ var _config = __webpack_require__(33);
 
 var _config2 = _interopRequireDefault(_config);
 
+var _my = __webpack_require__(34);
+
+var _my2 = _interopRequireDefault(_my);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
+// https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js 
 exports.default = {
-  components: { WxcTabBar: _wxcTabBar2.default },
+  components: {
+    WxcTabBar: _wxcTabBar2.default,
+    my: _my2.default
+  },
   data: function data() {
     return {
       tabTitles: _config2.default.tabTitles,
@@ -217,9 +197,36 @@ exports.default = {
       // console.log(index);
     }
   }
-};
-
-// https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 7 */
@@ -247,7 +254,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('text', [_vm._v("消息中心")])]), _c('div', {
     staticClass: ["item-container"],
     style: _vm.contentStyle
-  }, [_c('text', [_vm._v("我的主页")])])])
+  }, [_c('my')], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -1826,6 +1833,53 @@ exports.default = {
     iconFontUrl: '//at.alicdn.com/t/font_501019_mauqv15evc1pp66r.ttf'
   }
 };
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* template */
+var __vue_template__ = __webpack_require__(35)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "G:\\weex\\weex_demo\\src\\components\\pages\\my.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('text', {
+    staticClass: ["message"]
+  }, [_vm._v("my.")])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ })
 /******/ ]);

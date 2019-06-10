@@ -13,7 +13,10 @@
     <div class="item-container" :style="contentStyle"><text>消息中心</text></div>
 
     <!-- 第四个页面内容-->
-    <div class="item-container" :style="contentStyle"><text>我的主页</text></div>
+    <div class="item-container" :style="contentStyle">
+      <!-- <text>我的主页</text> -->
+      <my/>
+    </div>
   </wxc-tab-bar>
 </template>
 
@@ -30,9 +33,13 @@
 
   // https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js 
   import Config from './config'
+  import my from './components/pages/my'
 
   export default {
-    components: { WxcTabBar },
+    components: { 
+      WxcTabBar,
+      my
+       },
     data: () => ({
       tabTitles: Config.tabTitles,
       tabStyles: Config.tabStyles
