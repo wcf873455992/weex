@@ -673,7 +673,6 @@ module.exports = __vue_exports__
 module.exports = {
   "item-container": {
     "width": "750",
-    "backgroundColor": "#f2f3f4",
     "alignItems": "center",
     "justifyContent": "center"
   }

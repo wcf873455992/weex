@@ -26,7 +26,7 @@
 <style scoped>
   .item-container {
     width: 750px;
-    background-color: #f2f3f4;
+    background-color: hsl(210, 8%, 95%);
     align-items: center;
     justify-content: center;
   }
