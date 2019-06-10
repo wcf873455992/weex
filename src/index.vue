@@ -4,7 +4,10 @@
                title-type="icon"
                @wxcTabBarCurrentTabSelected="wxcTabBarCurrentTabSelected">
     <!-- 第一个页面内容-->
-    <div class="item-container" :style="contentStyle"><text>首页</text></div>
+    <div class="item-container" :style="contentStyle">
+      <!-- <text>首页</text> -->
+      <office/>
+      </div>
 
     <!-- 第二个页面内容-->
     <div class="item-container" :style="contentStyle"><text>特别推荐</text></div>
@@ -29,33 +32,34 @@
   }
 </style>
 <script>
-  import { WxcTabBar, Utils } from 'weex-ui';
+import { WxcTabBar, Utils } from 'weex-ui'
+// https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js
+import Config from './config'
+import my from './components/pages/my/My'
+import office from './components/pages/office/Office'
 
-  // https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js 
-  import Config from './config'
-  import my from './components/pages/my'
-
-  export default {
-    components: { 
-      WxcTabBar,
-      my
-       },
-    data: () => ({
-      tabTitles: Config.tabTitles,
-      tabStyles: Config.tabStyles
-    }),
-    created () {
-      const tabPageHeight = Utils.env.getPageHeight();
-      // 如果页面没有导航栏，可以用下面这个计算高度的方法
-      // const tabPageHeight = env.deviceHeight / env.deviceWidth * 750;
-      const { tabStyles } = this;
-      this.contentStyle = { height: (tabPageHeight - tabStyles.height) + 'px' };
-    },
-    methods: {
-      wxcTabBarCurrentTabSelected (e) {
-        const index = e.page;
-        // console.log(index);
-      }
+export default {
+  components: {
+    WxcTabBar,
+    my,
+    office
+  },
+  data: () => ({
+    tabTitles: Config.tabTitles,
+    tabStyles: Config.tabStyles
+  }),
+  created () {
+    const tabPageHeight = Utils.env.getPageHeight()
+    // 如果页面没有导航栏，可以用下面这个计算高度的方法
+    // const tabPageHeight = env.deviceHeight / env.deviceWidth * 750;
+    const { tabStyles } = this
+    this.contentStyle = { height: (tabPageHeight - tabStyles.height) + 'px' }
+  },
+  methods: {
+    wxcTabBarCurrentTabSelected (e) {
+      // const index = e.page
+      // console.log(index);
     }
-  };
+  }
+}
 </script>
